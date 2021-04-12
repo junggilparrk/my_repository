@@ -1,0 +1,40 @@
+package day0409Ex;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketAddress;
+import java.util.ArrayList;
+import java.util.List;
+
+public class TcpSever {
+	public static void main(String[] args) {
+		ServerSocket ss;
+	
+			Socket socket=null;
+			
+			try {
+				ss=new ServerSocket(7777);
+				System.out.println("클라이언트 접속 대기중...");
+			
+				while(socket!=null) {
+				socket=ss.accept();
+				
+				}
+				Thread w=new Thread(new TcpWriter(socket));
+				
+				w.start();
+				w.join();
+				
+				
+				
+			} catch (IOException e) {
+				System.out.println("서버 종료");
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+		
+	}
+}

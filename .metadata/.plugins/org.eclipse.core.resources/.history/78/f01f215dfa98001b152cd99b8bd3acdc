@@ -1,0 +1,27 @@
+package day0409Ex;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+
+public class MyTcpServer {
+	public static void main(String[] args) {
+		
+		try {
+			ServerSocket serverSocket=new ServerSocket(7777);//서버의 포트번호
+			
+			Thread w=new Thread(new TcpWriter(socket));
+			w.start();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+			
+		} 
+		
+	}
+}

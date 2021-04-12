@@ -1,0 +1,28 @@
+package day0409Ex;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class ThreadEx2 extends Thread{
+	BufferedReader br;
+	
+		
+	
+	
+	public void buffer(BufferedReader br) {
+		this.br = br;
+	}
+
+	@Override
+	public void run() {
+		while(true) {
+			Scanner sc=new Scanner(System.in);
+			String str=sc.nextLine();
+			br.write(str);	
+		}
+	}
+
+}

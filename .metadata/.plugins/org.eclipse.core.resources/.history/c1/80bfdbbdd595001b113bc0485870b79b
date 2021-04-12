@@ -1,0 +1,37 @@
+package day0405Ex;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.util.Arrays;
+
+public class ByteArrayOutputStreamEx01 {
+	public static void main(String[] args) {
+		byte[] result1=new byte[128];
+		byte[] result;
+
+		//input
+		ByteArrayInputStream in=new ByteArrayInputStream(result1);
+	
+		byte k= 127;
+		for(int i=127;i>=0;i--) {
+			result1[i]=127;
+			
+		}
+		int num=-1;
+		
+		while((num=in.read())!=-1){
+			System.out.println(num);
+		}
+		
+		//output
+		ByteArrayOutputStream out=new ByteArrayOutputStream();
+		
+		for(int i=127;i>=0;i--) {
+			out.write((byte)i);
+		}
+		result = out.toByteArray();
+		System.out.println(Arrays.toString(result));
+		
+		
+	}
+}

@@ -1,0 +1,35 @@
+package day0409Ex;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class SeverRead extends Thread{
+	BufferedReader br;
+	
+		
+	
+	
+	
+	public SeverRead(BufferedReader br) {
+		this.br = br;
+	}
+
+	@Override
+	public void run() {
+		while(true) {
+			String msg;
+			try {
+				msg = br.readLine();
+				System.out.println(msg+'\n'); 
+				
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+				
+		}
+	}
+
+}

@@ -1,0 +1,25 @@
+package day0409Ex;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+
+public class TcpReader extends Thread {
+	BufferedReader br;
+
+	public TcpReader(BufferedReader br) {
+		this.br = br;
+	}
+
+	
+	public void run() {//소켓으로 해도됨.
+		try {
+			while (true) {
+				String msg = br.readLine();
+				System.out.println(msg);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+}

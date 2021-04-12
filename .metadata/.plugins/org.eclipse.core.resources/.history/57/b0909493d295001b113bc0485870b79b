@@ -1,0 +1,23 @@
+package day0405Ex;
+
+import java.io.ByteArrayOutputStream;
+import java.util.Arrays;
+
+public class ByteArrayOutputStreamEx01 {
+	public static void main(String[] args) {
+		
+		byte[] result;
+		
+		ByteArrayOutputStream out=new ByteArrayOutputStream();
+		
+		byte k=127;
+		for(int i=127;i>=0;i--) {
+			out.write((byte)i);
+			i--;
+		}
+		result = out.toByteArray();
+		System.out.println(Arrays.toString(result));
+		
+		
+	}
+}

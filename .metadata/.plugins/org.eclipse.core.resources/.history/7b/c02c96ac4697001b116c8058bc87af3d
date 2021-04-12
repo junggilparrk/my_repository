@@ -1,0 +1,21 @@
+package day0407Ex;
+
+import java.io.File;
+import java.io.IOException;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		
+		try {
+			File file=new File("2021/04/07");
+			file.mkdirs();
+			File file=new File("2021/04/07/testMyfile");
+			file.createNewFile();
+			System.out.println("파일이 생성됨");
+		} catch (IOException e) {
+			System.out.println("파일이 안생성됨");
+			e.printStackTrace();
+		}
+	}
+}

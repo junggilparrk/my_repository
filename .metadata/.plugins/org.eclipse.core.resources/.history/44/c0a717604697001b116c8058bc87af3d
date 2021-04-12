@@ -1,0 +1,19 @@
+package day0407Ex;
+
+import java.io.File;
+import java.io.IOException;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		
+		try {
+			File file=new File("2021/04/07/testMyFile");
+			file.mkdirs();
+			file.createNewFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

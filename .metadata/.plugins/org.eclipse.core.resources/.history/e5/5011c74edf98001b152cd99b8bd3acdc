@@ -1,0 +1,23 @@
+package day0409Ex;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class ThreadEx extends Thread{
+	
+	
+	BufferedWriter bw;
+	
+
+	@Override
+	public void run() {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		try {
+			bw.write(str+"\n");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}	 
+}

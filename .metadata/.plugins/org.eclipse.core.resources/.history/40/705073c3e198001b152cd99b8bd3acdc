@@ -1,0 +1,58 @@
+package day0409Ex;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class ClientThreadWriter extends Thread {
+	Socket socket= null;
+	BufferedWriter bw=null;
+	
+	public void getSocket(String ip,int port) {
+		
+		try {
+			
+			socket=new Socket(ip,port);
+			System.out.println("서버의 접속 성공");
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally { 
+			
+				if(socket!=null) {
+					try {
+					socket.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}	
+				}
+		}
+	
+	}
+	@Override
+	public void run() {
+		try {
+			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(),"utf-8"));
+			Scanner sc=new Scanner(System.in);
+			String str=sc.nextLine();
+			bw.write(str+"\n");
+			bw.flush();
+		} catch (UnsupportedEncodingException e1) {
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}finally {
+			if(bw!=null) {
+				try {
+					bw.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}	 
+}

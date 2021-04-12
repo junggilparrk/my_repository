@@ -1,0 +1,48 @@
+package day0409Ex;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class ThreadEx2 extends Thread{
+	Socket socket;
+	BufferedReader br;
+	BufferedWriter bw;
+	ServerSocket serverSocket; 
+	public void getSocket(int portnum) {
+		
+		
+			try {
+				serverSocket=new ServerSocket(portnum);
+				System.out.println("접속 대기중...");
+				socket=serverSocket.accept();//엑셉트 진행후 클라이언트와 연결된 소켓을 반환
+				
+				System.out.println(">>>클라이언트 -"+socket.getInetAddress());
+				System.out.println("접속 성공....");
+				BufferedReader br=new BufferedReader(new InputStreamReader(socket.getInputStream(),"utf-8"));
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			
+			 
+	}
+	@Override
+	public void run() {
+		try {
+			String msg=br.readLine();
+			System.out.println(msg);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+}

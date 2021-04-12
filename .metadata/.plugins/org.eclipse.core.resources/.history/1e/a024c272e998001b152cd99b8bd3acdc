@@ -1,0 +1,44 @@
+package day0409Ex;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class ThreadEx extends Thread{
+	
+	Socket socket;
+	BufferedWriter bw=null;
+	
+	
+	public ThreadEx(Socket socket, BufferedWriter bw) {
+		super();
+		this.socket = socket;
+		this.bw = bw;
+	}
+
+
+	@Override
+	public void run() {
+		try {
+			Scanner sc=new Scanner(System.in);
+			String str=sc.nextLine();
+			bw.write(str+"\n");
+		} catch (UnsupportedEncodingException e1) {
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}finally{
+			if(bw!=null) {
+				try {
+					bw.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			
+			}
+		}	 
+	}
+}

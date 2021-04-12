@@ -1,0 +1,36 @@
+package day0409Ex;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+
+public class ClientThreadWriter extends Thread {
+	BufferedWriter bw;
+	
+	public ClientThreadWriter(BufferedWriter bw) {
+		this.bw = bw;
+	}
+	@Override
+	public void run() {
+		Scanner sc=new Scanner(System.in);
+		
+		try {
+			String str=sc.nextLine();
+			bw.write(str+"\n");
+			bw.flush();
+			} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			if(bw!=null) {
+				try {
+					bw.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		}
+	
+	}	
+

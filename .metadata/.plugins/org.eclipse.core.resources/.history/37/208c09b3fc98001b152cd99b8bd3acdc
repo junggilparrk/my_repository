@@ -1,0 +1,28 @@
+package day0409Ex;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+
+public class ClientThreadReader extends Thread {
+
+	BufferedReader br;
+
+	public ClientThreadReader(BufferedReader br) {
+
+		this.br = br;
+
+	}
+
+	@Override
+	public void run() {
+		try {
+			while (true) {
+				String msg = br.readLine();
+				System.out.println(msg);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

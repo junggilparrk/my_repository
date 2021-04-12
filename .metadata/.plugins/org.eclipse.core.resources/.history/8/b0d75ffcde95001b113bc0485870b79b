@@ -1,0 +1,7 @@
+package day0405.ioEx01;
+
+public class ByteArrayIOCopyTest {
+	public static void main(String[] args) {
+		
+	}
+}

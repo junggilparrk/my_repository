@@ -2,13 +2,11 @@ package day0310.ex01;
 
 public class CarTest5 {
 	public static void main(String[] args) {
-		Car obbacha=new Car();
-		obbacha.color="빨강";
-		obbacha.mileage=1000;
+		Car obbacha=new Car("빨강",1000);
 		
-		Car abbacha=new Car();
-		abbacha.color="회색";
-		abbacha.mileage=100000;
+		
+		Car abbacha=new Car("회색",100000);
+		
 		
 		//각각의 차의 내용을 출력
 		obbacha.printInfo();

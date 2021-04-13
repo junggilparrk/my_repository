@@ -45,10 +45,10 @@ public class CarTest2 {
 		
 		Car car7=new Car("검정색",100000);
 	
-		for(int i=0;i<carArr2.length;i++) {
-			if(carArr2[i].color.contentEquals("초록색")){
-				carArr2[i].mileage+=100;
-			}System.out.println(carArr2[i].mileage);
+		for(int i=0;i<carArr.length;i++) {
+			if(carArr[i].color.contentEquals("초록색")){
+				carArr[i].mileage+=100;
+			}System.out.println(carArr[i].mileage);
 		}
 		
 		

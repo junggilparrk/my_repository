@@ -1,9 +1,0 @@
-package day0406.fileEx01.inputStreamEx01;
-
-import java.io.File;
-
-public class FileInputStreamEx01 {
-	public static void main(String[] args) {
-		File file=new File("src/FileInputStreamEx01");
-	}
-}

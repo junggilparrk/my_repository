@@ -1,9 +1,0 @@
-package day0406fileEx01;
-
-import java.io.FileOutputStream;
-
-public class FileOutputStreamEx02 {
-		public static void main(String[] args) {
-			FileOutputStream fout=new FileOutputStream("test.txt");
-	}
-}

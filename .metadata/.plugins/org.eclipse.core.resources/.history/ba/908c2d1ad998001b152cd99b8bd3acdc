@@ -1,7 +1,0 @@
-package day0409Ex;
-
-public class MyTcpServer {
-	public static void main(String[] args) {
-		
-	}
-}

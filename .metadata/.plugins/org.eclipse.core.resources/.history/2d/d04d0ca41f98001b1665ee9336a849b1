@@ -1,7 +1,0 @@
-package day0408Ex;
-
-public class Car {
-	private String Type;
-	private int maxSpeed;
-	private int price;
-}

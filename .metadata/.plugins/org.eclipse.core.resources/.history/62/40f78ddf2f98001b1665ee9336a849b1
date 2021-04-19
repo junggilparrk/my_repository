@@ -1,9 +1,0 @@
-package day0408.readerwriter;
-
-import java.io.File;
-
-public class Ex01 {
-	public static void main(String[] args) {
-		Filele file = new File("src/day0408/readerwriter","hello.txt");
-	}
-}
